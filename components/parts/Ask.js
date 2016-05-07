@@ -4,7 +4,6 @@ var Display = require('./Display');
 var Ask = React.createClass({
 
 	getInitialState(){
-
 		return {
 			choices: [],
 			answer: undefined
@@ -21,7 +20,6 @@ var Ask = React.createClass({
 	},
 
 	setUpChoices (){
-
 		var choices = Object.keys(this.props.question);
 		choices.shift();
 		this.setState({choices:choices, answer:sessionStorage.answer});
@@ -35,14 +33,12 @@ var Ask = React.createClass({
 	},
 
 	addChoiceButton(choice, i){
-		
 		var buttonTypes = ['primary', 'success', 'warning', 'danger'];
 		return (
 			<button key={i} className={"col-xs-12 col-sm-6 btn btn-" + buttonTypes[i]} onClick={this.select.bind(null, choice)}>
 				{choice}: {this.props.question[choice]}
 			</button>
 			);
-
 	},
 
 	render() {
